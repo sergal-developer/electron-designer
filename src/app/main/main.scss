@@ -1,0 +1,95 @@
+.app-main {
+   background: #444444;
+   width: 100vw;
+   height: 100vh;
+   min-width: 100vw;
+   min-height: 100vh;
+   max-width: 100vw;
+   max-height: 100vh;
+   // overflow: hidden;
+   overflow: auto;
+   display: flex;
+   flex-direction: column;
+
+   .menu {
+      // background: #3a3a3a;
+      width: 100%;
+      height: 30px;
+      display: flex;
+      gap: 10px;
+      color: white;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: row;
+      padding: 0 20px;
+
+      .item {
+         padding: 3px;
+         background: inherit;
+         cursor: pointer;
+         user-select: none;
+
+         &:hover {
+            background: #AAAAAA;
+         }
+      }
+   }
+
+   .wrapper-work-area {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      .inner-work-area {
+         background: #ababab;
+         width: 100%;
+         height: 100%;
+
+         &.tool-left {
+            margin-left: 60px;
+            width: calc(100% - 60px);
+         }
+
+         &.tool-right {
+            margin-right: 310px;
+            width: calc(100% - 310px);
+         }
+
+         &.tools {
+            margin-left: 60px;
+            margin-right: 310px;
+            width: calc(100% - 370px);
+         }
+      }
+
+      .tools-bar {
+         width: 50px;
+         height: auto;
+         min-height: 500px;
+         position: absolute;
+         left: 0;
+         margin: 5px;
+      }
+
+      .properties-panel {
+         width: 300px;
+         height: calc(100% - 10px);
+         position: absolute;
+         right: 0;
+         margin: 5px;
+      }
+   }
+
+   .status-bar {
+      background: #444444;
+      width: 100%;
+      height: 30px;
+   }
+}
+
+
+.panel {
+   background: #595959;
+   border-radius: 8px;
+}

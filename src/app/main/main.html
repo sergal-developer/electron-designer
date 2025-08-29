@@ -1,0 +1,19 @@
+<div class="app-main">
+   <div class="menu">
+      <div class="item" *ngFor="let item of menus">
+         {{ item }}
+      </div>
+      <div class="item" (click)="changeLayout()">
+         Layout
+      </div>
+      <div class="item" (click)="createNewDocument()">
+         New doc
+      </div>
+   </div>
+   <div class="wrapper-work-area">
+      <div class="tools-bar panel"></div>
+      <div class="inner-work-area {{ layout }}"></div>
+      <div class="properties-panel panel"></div>
+   </div>
+   <div class="status-bar"></div>
+</div>

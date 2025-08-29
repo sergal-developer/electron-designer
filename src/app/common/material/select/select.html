@@ -1,0 +1,22 @@
+<div [attr.id]="id" class="field select">
+    <mat-form-field>
+        <mat-label [innerHTML]="title"></mat-label>
+
+        <mat-select [formControl]="control" (selectionChange)="select($event)" (openedChange)="openChange($event)">
+            <mat-option *ngFor="let option of optionList" [value]="option" 
+                matTooltip="{{ option.name ? option.name : option }}" matTooltipShowDelay="700" matTooltipDisabled="{{matTooltipDisableFlag}}">
+                  <span *ngIf="option">{{ option.name ? option.name : option }}</span>
+            </mat-option>
+        <!-- <select [formControl]="control" [(ngModel)]="selectedOption"  > -->
+            <!-- <mat-option matTooltip="{{ (option && option.name) ? option.name : ''}}"
+                matTooltipDisabled="{{matTooltipDisableFlag}}" matTooltipShowDelay="700"
+                *ngFor="let option of optionList" [value]="option">
+                {{ (option.name) ? option.name : option }}
+            </mat-option> -->
+        </mat-select>
+        <mat-error *ngIf="control.hasError('required')">{{matValidationError}}</mat-error>
+        <mat-error *ngIf="matCustomError.length">{{matCustomError}}</mat-error>
+        <mat-hint *ngIf="control.value?.hint">{{control?.value?.hint}}</mat-hint>
+        <mat-hint *ngIf="matCustomHint.length">{{matCustomHint}}</mat-hint>
+    </mat-form-field>
+</div>

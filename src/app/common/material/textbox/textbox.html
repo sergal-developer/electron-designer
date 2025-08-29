@@ -1,0 +1,30 @@
+<div [attr.id]="id" class="field textbox">
+    <mat-form-field >
+        <mat-label [innerHTML]="title"></mat-label>
+
+        <input *ngIf="!multiLine"
+            matInput
+            [formControl]="control"
+            (input)="valueChange($event)"
+            [attr.maxlength]="maxlength"
+            placeholder="{{placeholder}}"
+            type="{{type}}">
+
+        <textarea
+            *ngIf="multiLine"
+            matInput
+            [formControl]="control"
+            (input)="valueChange($event)"
+            [attr.maxlength]="maxlength"
+            placeholder="{{placeholder}}"
+            matTextareaAutosize
+            cdkAutosizeMinRows="minRows"
+            cdkAutosizeMaxRows="maxRows"
+        >
+        </textarea>
+        <mat-error *ngIf="control?.errors?.required">{{matValidationError}}</mat-error>
+        <mat-error *ngIf="matCustomError.length">{{matCustomError}}</mat-error>
+        <mat-hint *ngIf="control.value?.hint">{{control.value?.hint}}</mat-hint>
+        <mat-hint *ngIf="matCustomHint.length">{{matCustomHint}}</mat-hint>
+    </mat-form-field>
+</div>

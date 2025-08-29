@@ -1,0 +1,16 @@
+<div class="modal">
+
+   <mat-dialog-content class="sowDialogContent">
+      <textbox [title]="'Document'" [control]="modalForm.get('document')"></textbox>
+      <div class="half">
+         <textbox [title]="'Width'" [type]="'number'" [control]="modalForm.get('width')"></textbox>
+         <textbox [title]="'Height'" [type]="'number'" [control]="modalForm.get('height')"></textbox>
+      </div>
+      <select-mat [title]="'Unit'" [control]="modalForm.get('unit')" [optionList]="unitList"></select-mat>
+   </mat-dialog-content>
+   <mat-dialog-actions>
+      <button mat-button (click)="onNoClick()"> Cancel </button>
+      <button mat-raised-button (click)="createDocument()">Create</button>
+   </mat-dialog-actions>
+
+</div>
