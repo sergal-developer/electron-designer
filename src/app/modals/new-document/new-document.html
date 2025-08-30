@@ -6,7 +6,7 @@
          <textbox [title]="'Width'" [type]="'number'" [control]="modalForm.get('width')"></textbox>
          <textbox [title]="'Height'" [type]="'number'" [control]="modalForm.get('height')"></textbox>
       </div>
-      <select-mat [title]="'Unit'" [control]="modalForm.get('unit')" [optionList]="unitList"></select-mat>
+      <selectbox [title]="'Unit'" [control]="modalForm.get('unit')" [optionList]="unitList"></selectbox>
    </mat-dialog-content>
    <mat-dialog-actions>
       <button mat-button (click)="onNoClick()"> Cancel </button>

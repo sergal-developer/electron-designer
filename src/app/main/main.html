@@ -12,7 +12,21 @@
    </div>
    <div class="wrapper-work-area">
       <div class="tools-bar panel"></div>
-      <div class="inner-work-area {{ layout }}"></div>
+      <div class="inner-work-area {{ layout }}">
+         <ng-container *ngIf="documents.length">
+            <div class="documents-bar">
+               <div class="item" *ngFor="let document of documents" [ngClass]="{'current': document.active}">
+                  <span>{{ document.name }}</span>
+                  <span class="closeDocument" (click)="closeDocument(document)">
+                     <span class="material-symbols-outlined">close</span>
+                  </span>
+               </div>
+            </div>
+            <div class="work-area">
+               <document-view></document-view>
+            </div>
+         </ng-container>
+      </div>
       <div class="properties-panel panel"></div>
    </div>
    <div class="status-bar"></div>

@@ -49,17 +49,20 @@
          &.tool-left {
             margin-left: 60px;
             width: calc(100% - 60px);
+            max-width: calc(100% - 60px);
          }
 
          &.tool-right {
             margin-right: 310px;
             width: calc(100% - 310px);
+            max-width: calc(100% - 310px);
          }
 
          &.tools {
             margin-left: 60px;
             margin-right: 310px;
             width: calc(100% - 370px);
+            max-width: calc(100% - 370px);
          }
       }
 
@@ -85,6 +88,58 @@
       background: #444444;
       width: 100%;
       height: 30px;
+   }
+
+   .documents-bar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 5px;
+      font-size: 13px;
+      padding: 5px;
+      padding-bottom: 0;
+      background: #444444;
+      overflow: auto;
+      max-width: inherit;
+      width: inherit;
+      max-width: 100%;
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      .item {
+         background: #333333;
+         color: white;
+         padding: 4px 4px;
+         border-radius: 5px;
+         border-bottom-left-radius: 0;
+         border-bottom-right-radius: 0;
+         line-height: 1;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         cursor: pointer;
+         gap: 5px;
+
+         .closeDocument {
+            width: 15px;
+            height: 15px;
+            font-size: 14px;
+            color: #B1B1B1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            .material-symbols-outlined {
+               font-size: inherit;
+            }
+         }
+
+         &.current, &:hover {
+            background: #595959;
+         }
+      }
    }
 }
 

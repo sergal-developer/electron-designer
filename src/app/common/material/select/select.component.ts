@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } fro
 import { FormControl } from '@angular/forms';
 
 @Component({
-    selector: 'select-mat',
+    selector: 'selectbox',
     templateUrl: './select.html',
     styleUrls: ['./select.scss'],
     encapsulation: ViewEncapsulation.None,
